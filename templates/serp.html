@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>{{ results|length }} Sonuç Bulundu</h2>
+      <p>The .thumbnail class can be used to display an image gallery. Click on the images to see it in full size:</p>
+      <div class="row">
+        {% for result in results %}
+        <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0 col-lg-3 col-lg-offset-0">
+          <a href={{ result.link}} class="thumbnail">
+            <img class="img-responsive" width="150px%" height="150px" src={{ result.img }} alt="Pulpit Rock">
+            <div style="height:40px;">
+              <h5> {{ result.name }} </h5>
+            </div>
+            <font color="DarkOrange"><b>{{ result.price }}</b></font> <small>Merlin Cycles</small>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
